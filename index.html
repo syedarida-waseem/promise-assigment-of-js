@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Q1. Bank Account Withdrawal
+                Logic: Balance is Rs. 10,000 and withdrawal amount is Rs. 7,000. Since the balance is sufficient, the Promise will resolve.</h2>
+               <h4>let balance = 10000;
+let withdraw = 7000;
+
+let withdrawal = new Promise((resolve, reject) => {
+
+    if (balance >= withdraw) {
+        resolve("Withdrawal Successful");
+    } else {
+        reject("Insufficient Balance");
+    }
+
+});
+
+withdrawal
+.then((result) => {
+    console.log(result);
+})
+.catch((error) => {
+    console.log(error);
+});</h4>
+               
+                <h2>Q2. Online Exam Result
+Logic:
+- Marks 50 or above = Pass.
+- Marks below 50 = Fail.
+- Marks above 100 or below 0 = Invalid.</h2>
+
+<h4>let marks = 75;
+
+let result = new Promise((resolve, reject) => {
+
+    if (marks < 0 || marks > 100) {
+        reject("Invalid Marks");
+    }
+    else if (marks >= 50) {
+        resolve("Pass");
+    }
+    else {
+        reject("Fail");
+    }
+
+});
+
+result
+.then((data) => {
+    console.log(data);
+})
+.catch((error) => {
+    console.log(error);
+});</h4>
+
+
+<h2>Q3. Product Delivery System
+Logic: setTimeout() will wait for 3 seconds and then resolve the Promise.</h2>
+
+<h4>  let delivery = new Promise((resolve, reject) => {
+
+    setTimeout(() => {
+
+        resolve("Product Delivered Successfully");
+
+    }, 3000);
+
+});
+
+delivery
+.then((result) => {
+    console.log(result);
+})
+.catch((error) => {
+    console.log(error);
+});</h4>
+<h2>Q4. Promise Chaining
+Logic:
+1. Start with 10.
+2. Add 20 = 30.
+3. Multiply by 2 = 60.
+4. Subtract 5 = 55.</h2>
+
+
+<h4>let number = new Promise((resolve, reject) => {
+    resolve(10);
+});
+
+number
+.then((result) => {
+    return result + 20;
+})
+.then((result) => {
+    return result * 2;
+})
+.then((result) => {
+    return result - 5;
+})
+.then((result) => {
+    console.log("Final Result:", result);
+})
+.catch((error) => {
+    console.log(error);
+});</h4>
+    <script>
+let balance = 10000;
+let withdraw = 7000;
+
+let withdrawal = new Promise((resolve, reject) => {
+
+    if (balance >= withdraw) {
+        resolve("Withdrawal Successful");
+    } else {
+        reject("Insufficient Balance");
+    }
+
+});
+
+withdrawal
+.then((result) => {
+    console.log(result);
+})
+.catch((error) => {
+    console.log(error);
+});
+
+
+
+// qusetion 2
+
+
+let marks = 75;
+
+let result = new Promise((resolve, reject) => {
+
+    if (marks < 0 || marks > 100) {
+        reject("Invalid Marks");
+    }
+    else if (marks >= 50) {
+        resolve("Pass");
+    }
+    else {
+        reject("Fail");
+    }
+
+});
+
+result
+.then((data) => {
+    console.log(data);
+})
+.catch((error) => {
+    console.log(error);
+});
+// question 3
+
+let delivery = new Promise((resolve, reject) => {
+
+    setTimeout(() => {
+
+        resolve("Product Delivered Successfully");
+
+    }, 3000);
+
+});
+
+delivery
+.then((result) => {
+    console.log(result);
+})
+.catch((error) => {
+    console.log(error);
+});
+//question 4
+let number = new Promise((resolve, reject) => {
+    resolve(10);
+});
+
+number
+.then((result) => {
+    return result + 20;
+})
+.then((result) => {
+    return result * 2;
+})
+.then((result) => {
+    return result - 5;
+})
+.then((result) => {
+    console.log("Final Result:", result);
+})
+.catch((error) => {
+    console.log(error);
+});
+    </script>
+</body>
+</html>
